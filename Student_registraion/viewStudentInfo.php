@@ -17,7 +17,6 @@
             
       <div id="wrapper">  
           <div id="page-wrapper" class="container"> 
-
               <!-- Page Heading -->
                 <div class="row">
                     <div class="col-lg-12">
@@ -31,19 +30,36 @@
         {
             require_once 'student.php';
             require_once 'db.php';
-            //session_start();
-                
-                $sql = mysqli_query($con, "SELECT * FROM Students");
-                
-                echo 'Id Student Name Creation Date'. '<br/>';
+            //session_start();               
+                $sql = mysqli_query($con, "SELECT * FROM Students");  
+        ?>
+                <div>
+                    <table border='1'>
+                    <tr class="warning">
+                    <th>Student Id</th>
+                    <th>Student Name</th>
+                    <th>Creation Date</th>
+                    </tr>
+                <?php
                 while($row = mysqli_fetch_array($sql)) 
                 {   
-                    echo $row['id'] . " " . $row['student_name']." " . $row['created'];
-                    echo "<br>";
-                }        
-                
+                 ?>   
+                    <tr class="success">
+                    <td> <?php echo $row['id'] ?> </td>
+                    <td> <?php  echo $row['student_name'] ?> </td>
+                    <td> <?php echo $row['created'] ?> </td>
+                    </tr>
+                    
+                <?php    
+                } 
+                ?>
+                    </table>
+                </div>
+              
+              <?php
+             mysqli_close($con);  
             }   
-        ?>
+              ?>
         
            </div> <!--page-wrapper ends -->       
       </div> <!-- wrapper ends -->
