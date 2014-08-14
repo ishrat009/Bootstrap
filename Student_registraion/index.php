@@ -29,10 +29,10 @@
                 </button>
                 <a class="navbar-brand" href=""> Home </a>
             </div>
-            
+        </nav>  
              <div id="page-wrapper">
 
-            <div class="container-fluid">
+            <div class="container">
 
                 <!-- Page Heading -->
                 <div class="row">
@@ -93,27 +93,39 @@
                                 </div>
                             </a>
                         </div>
-                </div>
-            <!-- /.row -->
+                        
+                        
+                   </div>
+                </div> <!-- /.row -->
+            
             
         <a href="studentEntry.php">Add New Student</a> <br/>
         <a href="courseEntry.php">Add New Course</a> <br/>
-        <a href="assignCourseToStudents.php">Assign Course to Students</a> <br/>
         <a href="AddStudentWithCourses.php" >Add Student with Courses </a></br>
+        <a href="assignCourseToStudents.php">Assign Course to Students</a> <br/>
+        <a href="viewStudentInfo.php">View Student Info</a> <br/>
         
-        
-      </div>  
+            </div>  <!-- container end -->
+      </div>  <!-- page-wrappers end -->
+            
+      </div> <!-- wrappers end -->   
+      
+      
         <?php
         // put your code here
         ?>
         
         
-         <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
+     <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/jquery.js"></script>
-    <script src="js/bootstrap.js"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="js/plugins/morris/raphael.min.js"></script>
+    <script src="js/plugins/morris/morris.min.js"></script>
+    <script src="js/plugins/morris/morris-data.js"></script>
         
     </body>
 </html>
