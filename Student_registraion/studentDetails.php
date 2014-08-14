@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            Student <small>Information Overview</small>
+                            Student <small>Information Details</small>
                         </h1>
                     </div>
                 </div>
@@ -31,38 +31,12 @@
             require_once 'student.php';
             require_once 'db.php';
             //session_start();               
-                $sql = mysqli_query($con, "SELECT * FROM Students");  
-        ?>
-                <div>
-                    <table border='1'>
-                    <tr class="warning">
-                    <th>Student Id</th>
-                    <th>Student Name</th>
-                    <th>Creation Date</th>
-                    <th> Action </th>
-                    </tr>
-                <?php
-                while($row = mysqli_fetch_array($sql)) 
-                {   
-                 ?>   
-                    <tr class="success">
-                    <td> <?php echo $row['id'] ?> </td>
-                    <td> <?php  echo $row['student_name'] ?> </td>
-                    <td> <?php echo $row['created'] ?> </td>
-                    <td> <a href="studentDetails.php <?php echo $row['id']; ?>"> View</a> |
-                        <a href="editStudent.php <?php  echo $row['student_name'] ?>"> Edit </a> |
-                        <a href="deleteStudent.php <?php echo $row['created'] ?>"> Delete </a>
-                    
-                    </td>
-                    </tr>
-                    
-                <?php    
-                } 
-                ?>
-                    </table>
-                </div>
-              
-              <?php
+                $sql = mysqli_query($con, "SELECT id FROM Students");  
+        
+                
+            $row = mysqli_fetch_array($sql);
+            print_r($row);   
+                
              mysqli_close($con);  
             }   
               ?>
@@ -83,4 +57,3 @@
         
     </body>
 </html>
-
