@@ -49,15 +49,15 @@
                     <td> <?php echo $row['id'] ?> </td>
                     <td> <?php  echo $row['student_name'] ?> </td>
                     <td> <?php echo $row['created'] ?> </td>
-                    <td> <a href="studentDetails.php <?php echo $row['id']; ?>"> View</a> |
-                        <a href="editStudent.php <?php  echo $row['student_name'] ?>"> Edit </a> |
-                        <a href="deleteStudent.php <?php echo $row['created'] ?>"> Delete </a>
+                    <td> <a href="studentDetails.php?id=<?php echo $row['id']; ?>"> View</a> |
+                        <a href="editStudent.php?id=<?php  echo $row['id']; ?>"> Edit </a> |
+                        <a href="deleteStudent.php?id=<?php echo $row['id']; ?>"> Delete </a>
                     
                     </td>
                     </tr>
                     
                 <?php    
-                } 
+                }
                 ?>
                     </table>
                 </div>
@@ -83,4 +83,3 @@
         
     </body>
 </html>
-
